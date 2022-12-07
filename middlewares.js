@@ -3,6 +3,6 @@ export function requestTime(req, res, next){
     next()
 }
 export function logger(req, res, next){
-    console.log(req.requestTime.toLocaleDateString())
+    console.log(req.requestTime)
     next()
 }
