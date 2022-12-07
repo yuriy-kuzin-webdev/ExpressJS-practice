@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head'); %>
-<body>
+  <%- include('./partials/head'); %>
+  <body>
     <%- include('./partials/navbar'); %>
-    <div class="container"></div>
+    <div class="container">
+      <h1>Features Page</h1>
+      <div id="app">
+        <div class="spinner-border" role="status" v-if="servers.length === 0">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <ul class="list-group" v-else>
+            <li class="list-group-item" v-for="server in servers">
+                {{ server.name }}
+                <strong> {{ server.status }} </strong>
+            </li>
+          </ul>
+      </div>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="/app.js"></script>
-</body>
+  </body>
 </html>
