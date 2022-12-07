@@ -19,7 +19,10 @@ app.use(logger)
 
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', {title: 'Index'})
+})
+app.get('/features', (req, res) => {
+    res.render('features', {title: 'Features'})
 })
 app.get('/download', (req,res) =>{
     res.download(path.resolve(__dirname,'static','index.html'))
